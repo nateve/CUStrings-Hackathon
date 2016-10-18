@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/');
 var Twitter = require('twitter');
+var $ = require('jquery');
 
 var app = express();
 
@@ -23,23 +24,32 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
-geocode = "40.1164204,-88.24338290000003,50mi"
-query = "stress OR stressed OR stressing OR tired"
-//statuses = api.search(q=query, geocode=geocode, count=1)
+// geocode = "40.1164204,-88.24338290000003,50mi"
+// query = "stress OR stressed OR stressing OR tired"
+// //statuses = api.search(q=query, geocode=geocode, count=1)
 
-var client = new Twitter({
-  consumer_key: 'sHndUIB5Obz6CKFj6IDacXnFc',
-  consumer_secret: 'i1oqZhCC5kJJjfgMbCcEawKlqcTR9PSI53i3nWgKcWUvi45TXf',
-  access_token_key: '786232481456414720-o9VxrRoX1mYQm8FHSLXt6IcvpxMljqG',
-  access_token_secret: 'T1apaw81udzULOIblAqSalBw4HT2fhZuqQplRQ28Q96J4'
-});
-client.get('search/tweets', {q: query, geocode: geocode, count: 1},function(error, tweets, response) {
-  if(error) throw error;
-  tweets = tweets
-  console.log(tweets);  // The favorites.
-  //console.log(response);  // Raw response object.
-});
+// var client = new Twitter({
+//   consumer_key: 'sHndUIB5Obz6CKFj6IDacXnFc',
+//   consumer_secret: 'i1oqZhCC5kJJjfgMbCcEawKlqcTR9PSI53i3nWgKcWUvi45TXf',
+//   access_token_key: '786232481456414720-o9VxrRoX1mYQm8FHSLXt6IcvpxMljqG',
+//   access_token_secret: 'T1apaw81udzULOIblAqSalBw4HT2fhZuqQplRQ28Q96J4'
+// });
+// client.get('search/tweets', {q: query, geocode: geocode, count: 1},function(error, tweets, response) {
+//   if(error) throw error;
+//   tweets = tweets
+//   console.log(tweets);  // The favorites.
+//   //console.log(response);  // Raw response object.
+// });
 
+// $(document).ready(function() {
+//   $("#search-bar" ).keydown(function( event ) {
+//     if ( event.which == 13 ) {
+//        event.preventDefault();
+//        var feeling = document.getElementById('search-bar').value;
+//        console.log(feeling);
+//     }
+//   })
+// });
 
 
 

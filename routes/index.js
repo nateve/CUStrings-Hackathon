@@ -1,6 +1,8 @@
 var express = require('express');
 var Twitter = require('twitter');
+var $ = require('jquery');
 var router = express.Router();
+
 
 
 router.get('/', function(req, res){
