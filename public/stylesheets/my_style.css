@@ -1,9 +1,12 @@
+#search-bar{
+    width: 400px;
+    margin-left: 25%;
+}
+
 #feeling{
-    width:400px;
-    height:50px;
-    top:50%;
-    margin-left:50%;
-    margin-bottom:5%;
+    width: 400px;
+    height: 50px;
+    top: 50%;
 }
 #feelingheader{
     width: 600px;
@@ -19,6 +22,11 @@
 }
 #tweets{
     width:120%;
+}
+
+.btn-default{
+    height:50px;
+    margin-left: -1px;
 }
 
 /* From Reset Stylesheet

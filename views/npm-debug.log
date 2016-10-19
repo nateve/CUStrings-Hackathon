@@ -25,7 +25,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:852:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
 15 verbose pkgid express_example@0.0.1
-16 verbose cwd /Users/nataliedeclerck/Documents/new
+16 verbose cwd /Users/nataliedeclerck/Documents/new/views
 17 error Darwin 14.5.0
 18 error argv "/usr/local/Cellar/node/6.3.1/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.3.1

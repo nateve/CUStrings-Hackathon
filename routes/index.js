@@ -1,8 +1,17 @@
 var express = require('express');
 var Twitter = require('twitter');
-var $ = require('jquery');
 var router = express.Router();
+var fs = require('fs');
+var jsdom = require("jsdom");
+var window = jsdom.jsdom().defaultView;
+var bodyParser = require('body-parser');
 
+var app = express();
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 
 router.get('/', function(req, res){
@@ -11,6 +20,11 @@ router.get('/', function(req, res){
   });
 });
 
+router.post('/', function(req,res){
+  var emotion = req.body.emotion
+  res.redirect('/about/' + emotion);
+})
+
 
 var client = new Twitter({
   consumer_key: 'sHndUIB5Obz6CKFj6IDacXnFc',
@@ -18,20 +32,18 @@ var client = new Twitter({
   access_token_key: '786232481456414720-o9VxrRoX1mYQm8FHSLXt6IcvpxMljqG',
   access_token_secret: 'T1apaw81udzULOIblAqSalBw4HT2fhZuqQplRQ28Q96J4'
 });
-geocode = "40.1164204,-88.24338290000003,50mi"
+geocode = "40.1164204,-88.24338290000003,30mi"
 query = "stress OR stressed OR stressing OR tired"
 
-router.get('/about', function(req, res){
+router.get('/about/:emotion', function(req, res){
+  console.log(req.params.emotion);
+  query = req.params.emotion
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
             res.status(200).render('about', {
             title: 'About',
             tweets: tweets
             });
-            console.log(tweets);
-            for(i in tweets){
-                console.log(tweets.text)
-            }
         }
         else{
         res.status(500).json({ error: error });
