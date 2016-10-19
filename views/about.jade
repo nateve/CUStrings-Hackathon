@@ -5,17 +5,18 @@ block content
   section.css-table
     section.two-column
       section#info.cell
-        h2 Infographics Here
+        h2 You're not the only one feeling "#{emotion}":
         img(src='https://openclipart.org/download/219571/cyberscooty-graph.svg')
       section.cell
         h2 Tweets From Champaign
-        ul#tweets
-          for tweet in tweets
-            each status in tweet
-              if status.text
-                li= status.text
-          else
-            li sorry, no tweets!
+        if tweets
+          ul#tweets
+            for tweet in tweets
+              each status in tweet
+                if status.text
+                  li= status.text
+        else
+          li sorry, no tweets!
   section.css-table
     section.three-column
       section.cell

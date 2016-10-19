@@ -32,21 +32,21 @@ var client = new Twitter({
   access_token_key: '786232481456414720-o9VxrRoX1mYQm8FHSLXt6IcvpxMljqG',
   access_token_secret: 'T1apaw81udzULOIblAqSalBw4HT2fhZuqQplRQ28Q96J4'
 });
-geocode = "40.1164204,-88.24338290000003,30mi"
-query = "stress OR stressed OR stressing OR tired"
+geocode = "40.109309,-88.228389,15mi"
+//query = "stress OR stressed OR stressing OR tired"
 
 router.get('/about/:emotion', function(req, res){
-  console.log(req.params.emotion);
-  query = req.params.emotion
+  var query = req.params.emotion
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
             res.status(200).render('about', {
             title: 'About',
+            emotion: req.params.emotion,
             tweets: tweets
             });
         }
         else{
-        res.status(500).json({ error: error });
+          res.status(500).json({ error: error });
         }
     });
 });
