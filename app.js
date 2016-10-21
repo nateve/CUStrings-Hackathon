@@ -6,7 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/');
 var Twitter = require('twitter');
-var $ = require('jquery');
+//var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
+var jsdom = require("jsdom");
+var window = jsdom.jsdom().defaultView;
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
+
+
 
 // geocode = "40.1164204,-88.24338290000003,50mi"
 // query = "stress OR stressed OR stressing OR tired"
@@ -41,18 +45,47 @@ app.use(routes);
 //   //console.log(response);  // Raw response object.
 // });
 
+// jsdom.jQueryify(window, "/javascript/jquery-3.1.1.min.js", function () {
+//   var $ = window.$;
+//   console.log("app.js");
+//   $("#feeling").keydown(function( event ) {
+//       console.log("inside function");
+//       if ( event.which == 13 ) {
+//          console.log("if statement");
+//          event.preventDefault();
+//          var feeling = document.getElementById("feeling").value;
+//          console.log(feeling);
+//       }
+//     })
+// });
+
 // $(document).ready(function() {
-//   $("#search-bar" ).keydown(function( event ) {
+//   $("#feeling" ).keydown(function( event ) {
 //     if ( event.which == 13 ) {
 //        event.preventDefault();
-//        var feeling = document.getElementById('search-bar').value;
+//        var feeling = document.getElementById('feeling').value;
 //        console.log(feeling);
 //     }
 //   })
 // });
 
 
-
+// jsdom.jQueryify(window, "https://code.jquery.com/jquery-3.1.1.js", function () {
+//   var $ = window.$;
+//   console.log($("#home").html());
+//   $("#home").click(function(){
+//     console.log("homey");
+//   });
+//   $("#search-bar" ).keydown(function( event ) {
+//     console.log("function");
+//     if ( event.which == 13 ) {
+//       console.log("if statement");
+//       event.preventDefault();
+//       var feeling = document.getElementById('search-bar').value;
+//       console.log(feeling);
+//     }
+//   })
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

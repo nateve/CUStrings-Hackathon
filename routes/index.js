@@ -1,8 +1,17 @@
 var express = require('express');
 var Twitter = require('twitter');
-var $ = require('jquery');
 var router = express.Router();
+var fs = require('fs');
+var jsdom = require("jsdom");
+var window = jsdom.jsdom().defaultView;
+var bodyParser = require('body-parser');
 
+var app = express();
+
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 
 router.get('/', function(req, res){
@@ -11,6 +20,11 @@ router.get('/', function(req, res){
   });
 });
 
+router.post('/', function(req,res){
+  var emotion = req.body.emotion
+  res.redirect('/search/' + emotion);
+})
+
 
 var client = new Twitter({
   consumer_key: 'sHndUIB5Obz6CKFj6IDacXnFc',
@@ -18,30 +32,29 @@ var client = new Twitter({
   access_token_key: '786232481456414720-o9VxrRoX1mYQm8FHSLXt6IcvpxMljqG',
   access_token_secret: 'T1apaw81udzULOIblAqSalBw4HT2fhZuqQplRQ28Q96J4'
 });
-geocode = "40.1164204,-88.24338290000003,50mi"
-query = "stress OR stressed OR stressing OR tired"
+geocode = "40.109309,-88.228389,15mi"
+//query = "stress OR stressed OR stressing OR tired"
 
-router.get('/about', function(req, res){
+router.get('/search/:emotion', function(req, res){
+  var query = req.params.emotion
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
-            res.status(200).render('about', {
-            title: 'About',
+            res.status(200).render('search', {
+            title: 'search',
+            emotion: req.params.emotion,
             tweets: tweets
             });
-            console.log(tweets);
-            for(i in tweets){
-                console.log(tweets.text)
-            }
         }
         else{
-        res.status(500).json({ error: error });
+          res.status(500).json({ error: error });
         }
     });
 });
 
-router.get('/contact', function(req, res){
-  res.render('contact', {
-    title: 'Contact'
+
+router.get('/about', function(req, res){
+  res.render('about', {
+    title: 'about'
   });
 });
 

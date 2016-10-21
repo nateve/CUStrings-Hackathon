@@ -6,3 +6,8 @@ block content
     .row
       #search-bar.input-group.stylish-input-group
         input#feeling.search-bar.form-control(type='text', placeholder='Enter an emotion')
+      form#target(action='/', method='post')
+        #search-bar.input-group.stylish-input-group
+            input#feeling.form-control(type='text', name="emotion", placeholder='Enter an emotion..', aria-describedby='basic-addon2')
+            span.input-group-btn
+                button#go.btn.btn-default(type='submit') Go!
