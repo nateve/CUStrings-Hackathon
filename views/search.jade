@@ -9,14 +9,15 @@ block content
         img#infograph(src='https://openclipart.org/download/219571/cyberscooty-graph.svg')
       section.cell
         h2 Tweets From Champaign
-        if tweets
-          ul#tweets
-            for tweet in tweets
-              each status in tweet
-                if status.text
-                  li= status.text
-        else
-          li sorry, no tweets!
+        div#tweetwrap
+          if tweets
+            ul#tweets
+              for tweet in tweets
+                each status in tweet
+                  if status.text
+                    li= status.text
+          else
+            li sorry, no tweets!
   section.css-table
     section.three-column
       section.cell

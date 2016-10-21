@@ -1,12 +1,4 @@
-// $(document).ready(function() {
-//     $("#feeling" ).keydown(function( event ) {
-//         if ( event.which == 13 ) {
-//             feeling = document.getElementById('feeling').value;
-//             console.log(feeling);
-//             event.preventDefault();
-//         }
-//     })
-// });
+
 stressed = ['afflicted', 'afraid', 'antsy', 'anxious','apprehensive', 'basket case', 
 'burdened', 'distressed', 'disturbed', 'dreading', 'fearful', 
 'fretful', 'frightened ', 'hassled', 'jittery', 'jumpy', 
@@ -47,7 +39,7 @@ angry = ['annoyed', 'angry', 'antagonized', 'ballistic',
 'riled', 'steamed', 'sullen', 'ticked ', 'uptight', 'vexed', 
 'wrathful', 'fed up', 'cranky', 'peeved', 'worked up']
 
-good = ['amused', 'blessed', "can't complain",'calm', 'captivated', 'caring', 
+happy = ['amused', 'blessed', "can't complain",'calm', 'captivated', 'caring', 
 'cheerful', 'chipper', 'chirpy', 'compassionate', 'cool', 'content', 
 'convivial', 'delighted', 'excited', 'ecstatic', 'elated', 'exultant', 
 'flying high', 'glad', 'good','gleeful', 'gratified', 'jolly', 'joyful', 
@@ -56,30 +48,36 @@ good = ['amused', 'blessed', "can't complain",'calm', 'captivated', 'caring',
 'pleased', 'proud', 'regretful', 'satisfied', 'sparkling', 'sunny', 
 'thrilled', 'upbeat', 'walking on air', 'awesome', 'sweet', 'rad']
 
+
 $(document).ready(function() {
-    $( "#target" ).submit(function( event ) {
-        var feeling = $("#feeling").val().toLowerCase()
+    var path = window.location.pathname;
+    if(path.includes("/search/")){
+        array = String(path).split("/");
+        var feeling = array.pop();
         console.log(feeling);
         if(jQuery.inArray(feeling, stressed) !== -1) {
             console.log("feeling stressed");
-            console.log($("#infograph").attr("src"));
-            $("#infograph").attr("src","http://met.live.mediaspanonline.com/assets/31069/example-608web_w608.jpg");
+            $("#infograph").attr("src","/images/stressed.png");
         }
         else if(jQuery.inArray(feeling, sad) !== -1) {
             console.log("feeling sad");
+            $("#infograph").attr("src","/images/depressed.png");
         }
         else if(jQuery.inArray(feeling, bored) !== -1) {
             console.log("feeling bored");
+            $("#infograph").attr("src","/images/bored.png");
         }
         else if(jQuery.inArray(feeling, angry) !== -1) {
             console.log("feeling angry");
+            $("#infograph").attr("src","/images/angry.png");
         }
-        else if(jQuery.inArray(feeling, good) !== -1) {
-            console.log("feeling good");
+        else if(jQuery.inArray(feeling, happy) !== -1) {
+            console.log("feeling happy");
+            $("#infograph").attr("src","/images/happy.png");
         }
         else {
             console.log("something else");
         }
-
-    });
+    };
 });
+

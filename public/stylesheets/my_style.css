@@ -23,6 +23,11 @@
 #tweets{
     width:120%;
 }
+#tweetwrap{
+    height: 500px;
+    padding: 20px;
+    overflow: scroll;
+}
 
 .btn-default{
     height:50px;
