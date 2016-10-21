@@ -1,14 +1,14 @@
 extends layout
 
 block content
-  h1#title Connect with people who feel #{emotion}!
+  h1#title You're not the only one who feels #{emotion}!
   section.css-table
     section.two-column
       section#info.cell
-        h2 You're not the only one:
+        h2 Volume of tweets in the past month with sentiment "#{emotion}"
         img#infograph(src='https://openclipart.org/download/219571/cyberscooty-graph.svg')
       section.cell
-        h2 Tweets From Champaign
+        h2 Recent Tweets From Champaign-Urbana
         div#tweetwrap
           if tweets
             ul#tweets
@@ -21,11 +21,22 @@ block content
   section.css-table
     section.three-column
       section.cell
-        h3 Resources
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+        h3 Community Resources
+        ul#resources
+          li Check the Stress Management Program at Mckinley - you can schedule an individual appointment, which is kept confidential: #[a(href="http://mckinley.illinois.edu/health-education/stress-management") mckinley.illinois.edu/health-education/stress-management ] or call 217-333-2701
       section.cell
-        h3 Tips
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+        h3 Okay, but what can I do right now?
+        ul#donow
+          li Chat with someone in a similar situation
+          li Take a break! Just 10 min of "personal time" can refresh you. What about trying a short meditation, or going for a walk?
       section.cell
-        h3 Events on campus
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+        h3 Send a Message
+        div#connect
+          p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+  div#disclaimer
+    br
+    br
+    p Disclaimer: If this is an emergency, call 911
+    p The Community Elements Crisis Line is available 24/7: (217) 359-4141 
+
+
