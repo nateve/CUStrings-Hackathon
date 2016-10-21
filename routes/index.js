@@ -22,7 +22,7 @@ router.get('/', function(req, res){
 
 router.post('/', function(req,res){
   var emotion = req.body.emotion
-  res.redirect('/about/' + emotion);
+  res.redirect('/search/' + emotion);
 })
 
 
@@ -35,12 +35,12 @@ var client = new Twitter({
 geocode = "40.109309,-88.228389,15mi"
 //query = "stress OR stressed OR stressing OR tired"
 
-router.get('/about/:emotion', function(req, res){
+router.get('/search/:emotion', function(req, res){
   var query = req.params.emotion
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
-            res.status(200).render('about', {
-            title: 'About',
+            res.status(200).render('search', {
+            title: 'search',
             emotion: req.params.emotion,
             tweets: tweets
             });
@@ -51,9 +51,10 @@ router.get('/about/:emotion', function(req, res){
     });
 });
 
-router.get('/contact', function(req, res){
-  res.render('contact', {
-    title: 'Contact'
+
+router.get('/about', function(req, res){
+  res.render('about', {
+    title: 'about'
   });
 });
 

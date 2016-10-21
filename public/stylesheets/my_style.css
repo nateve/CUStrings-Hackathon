@@ -29,6 +29,12 @@
     margin-left: -1px;
 }
 
+#title{
+    color:#0e2f44;
+    padding-bottom:30px;
+    text-align: center;
+}
+
 /* From Reset Stylesheet
 Based on http://meyerweb.com/eric/thoughts/2008/01/15/resetting-again/
 Removed elements not supported in HTML5
@@ -115,8 +121,11 @@ body {
   font: 62.5%/1.5 Helvetica, Arial, "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
   text-align: center;
   background: #000;
+  height:100%;
 }
 #wrapper {
+  min-height: 100%;
+  height: auto !important;
   width: 1000px;
   text-align: left;
   margin-left: auto;

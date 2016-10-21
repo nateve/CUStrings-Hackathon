@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1#title Connect with people who feel #{emotion}!
+  section.css-table
+    section.two-column
+      section#info.cell
+        h2 You're not the only one:
+        img#infograph(src='https://openclipart.org/download/219571/cyberscooty-graph.svg')
+      section.cell
+        h2 Tweets From Champaign
+        if tweets
+          ul#tweets
+            for tweet in tweets
+              each status in tweet
+                if status.text
+                  li= status.text
+        else
+          li sorry, no tweets!
+  section.css-table
+    section.three-column
+      section.cell
+        h3 Resources
+        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+      section.cell
+        h3 Tips
+        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+      section.cell
+        h3 Events on campus
+        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.

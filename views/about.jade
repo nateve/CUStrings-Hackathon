@@ -1,30 +1,20 @@
 extends layout
-
+ 
 block content
-  h1(style='color:#0e2f44;padding-bottom:30px') Connect with people who feel the same way!
   section.css-table
     section.two-column
-      section#info.cell
-        h2 You're not the only one feeling "#{emotion}":
-        img(src='https://openclipart.org/download/219571/cyberscooty-graph.svg')
       section.cell
-        h2 Tweets From Champaign
-        if tweets
-          ul#tweets
-            for tweet in tweets
-              each status in tweet
-                if status.text
-                  li= status.text
-        else
-          li sorry, no tweets!
+        h2 About
+        p This project was created for the 2016 HackCulture humanities-focused hackathon at the University of Illinois in Urbana-Champaign. Our project hopes to alleviate feelings of alienation and disconnectednes that result from the stressful academic culture in our community. Details and source code for the project can be found at #[a(href="https://github.com/nateve/hackathon") github.com/nateve/hackathon].
+        br
+        p For more information: #[a(href="https://publish.illinois.edu/hackculture/") publish.illinois.edu/hackculture]
+      section.cell
+        h2 Members
+        p Natalie DeClerck ndecle2@illinois.edu
+        p Smit Desai smitad2@illinois.edu
+        p Ian Harmon iharmon2@illinois.edu
+        p Isabel Musse imusse2@illinois.edu
   section.css-table
-    section.three-column
+    section.two-column
       section.cell
-        h3 Resources
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
-      section.cell
-        h3 Tips
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
-      section.cell
-        h3 Events on campus
-        p Lorem ipsum dolar sit amet, cons incidunt ut labore et dolore magn trud exercitation ullamcorpor susc vel eum irure dolor in reprehende dolore eu fugiat nulla pariatur.
+        

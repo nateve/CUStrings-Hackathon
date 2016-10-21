@@ -4,8 +4,8 @@ block content
   h1#feelingheader What are you feeling right now?
   .container
     .row
-      form(action='/', method='post')
+      form#target(action='/', method='post')
         #search-bar.input-group.stylish-input-group
             input#feeling.form-control(type='text', name="emotion", placeholder='Enter an emotion..', aria-describedby='basic-addon2')
             span.input-group-btn
-                button.btn.btn-default(type='submit') Go!
+                button#go.btn.btn-default(type='submit') Go!
