@@ -1,6 +1,6 @@
 #search-bar{
     width: 400px;
-    margin-left: 25%;
+    margin-left: 19%;
 }
 
 #feeling{
@@ -12,7 +12,7 @@
     width: 600px;
     height: 50px;
     top: 50%;
-    margin-left: 25%;
+    margin-left: 20%;
     margin-bottom: 5%;
     font-size: 36px;
 }
@@ -39,16 +39,22 @@
 }
 
 #title{
-    color:#0e2f44;
+    color:#283b5e;
     padding-bottom:30px;
     text-align: center;
 }
 #disclaimer{
   text-align: center;
 }
-#connect{
-  border:2px solid black;
-  padding:20px;
+#logo{
+  height:55px;
+  float:left;
+  padding-left: 10px;
+}
+
+@media (min-width: 1200px)
+.container {
+    width: 970px;
 }
 
 /* From Reset Stylesheet
@@ -160,18 +166,19 @@ body {
 /* Typography
 -----------------------------------------------------------------------------*/
 h1 {
-  color: #0e2f44;
+  color: #283b5e;
   font: 4em 'ChunkFiveRegular';
   line-height: 0.9em;
   margin-bottom: 0.9em;
 }
 h2 {
-  color: #0e2f44;  
+  color: #283b5e;  
   font-size: 1.8em;
   line-height: 1em;
   margin-bottom: 1em;
 }
 h3 {
+  color: #283b5e;
   font-size: 1.6em;
   line-height: 1.13em;
   margin-bottom: 1.13em;
@@ -266,7 +273,7 @@ acronym {
 /* Header
 -----------------------------------------------------------------------------*/
 header {
-  background: #0e2f44;
+  background: #283b5e;
 }
 header nav {
   width: 960px;
@@ -297,7 +304,9 @@ header nav ul li a {
   cursor: pointer;
 }
 header nav ul li a:hover {
-  background-color: #ff6a5c;
+  background-color: #ff6450;
+  color: #283b5e;
+  text-decoration: none;
 }
 /* Footer
 -----------------------------------------------------------------------------*/
@@ -306,7 +315,7 @@ footer {
   border-top: 1px solid #ccc;
   padding-top: 1.5em;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 250px;
 }
 footer ul {
   list-style: none;
