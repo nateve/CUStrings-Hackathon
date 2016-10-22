@@ -172,13 +172,13 @@ h1 {
   margin-bottom: 0.9em;
 }
 h2 {
-  color: #283b5e;  
+  color: #283b5e!important;
   font-size: 1.8em;
   line-height: 1em;
   margin-bottom: 1em;
 }
 h3 {
-  color: #283b5e;
+  color: #283b5e!important;
   font-size: 1.6em;
   line-height: 1.13em;
   margin-bottom: 1.13em;

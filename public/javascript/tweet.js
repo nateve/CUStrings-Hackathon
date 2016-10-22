@@ -39,14 +39,14 @@ angry = ['annoyed', 'angry', 'antagonized', 'ballistic',
 'riled', 'steamed', 'sullen', 'ticked ', 'uptight', 'vexed', 
 'wrathful', 'fed up', 'cranky', 'peeved', 'worked up']
 
-happy = ['amused', 'blessed', "can't complain",'calm', 'captivated', 'caring', 
+happy = ['amused', 'blessed', 'bold', "can't complain",'calm', 'captivated', 'caring', 
 'cheerful', 'chipper', 'chirpy', 'compassionate', 'cool', 'content', 
 'convivial', 'delighted', 'excited', 'ecstatic', 'elated', 'exultant', 
 'flying high', 'glad', 'good','gleeful', 'gratified', 'jolly', 'joyful', 
 'joyous', 'jubilant', 'laughing', 'loving', 'lively', 'merry', 
 'overjoyed', 'peaceful', 'peppy', 'perky', 'playful', 'pleasant', 
 'pleased', 'proud', 'regretful', 'satisfied', 'sparkling', 'sunny', 
-'thrilled', 'upbeat', 'walking on air', 'awesome', 'sweet', 'rad', 'happy']
+'thrilled', 'upbeat', 'walking on air', 'awesome', 'sweet', 'rad', 'happy', 'nice']
 
 
 $(document).ready(function() {

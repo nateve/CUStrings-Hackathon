@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 router.get('/', function(req, res){
   res.render('index', {
-    title: 'Home'
+    title: 'CU Strings'
   });
 });
 
@@ -40,7 +40,7 @@ router.get('/search/:emotion', function(req, res){
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
             res.status(200).render('search', {
-            title: 'search',
+            title: 'CU Strings',
             emotion: req.params.emotion,
             tweets: tweets
             });
@@ -54,7 +54,7 @@ router.get('/search/:emotion', function(req, res){
 
 router.get('/about', function(req, res){
   res.render('about', {
-    title: 'about'
+    title: 'CU Strings'
   });
 });
 
