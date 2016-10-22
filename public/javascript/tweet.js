@@ -54,7 +54,7 @@ $(document).ready(function() {
     console.log(path);
     path = path.replace('%20', ' ')
     if(path.includes("/search/")){
-        array = String(path).split("/");
+        array = String(path).toLowerCase().split("/");
         var feeling = array.pop();
         console.log(feeling);
         if(jQuery.inArray(feeling, stressed) !== -1) {
@@ -95,7 +95,7 @@ $(document).ready(function() {
         }
         else if(jQuery.inArray(feeling, bored) !== -1) {
             console.log("feeling bored");
-            $("#infograph").attr("src","/images/bored.png");
+            $("#infograph").attr("src","/images/bored_2.png");
             $("#resources").html("<li>What's your mood right now? Have you tried the \
             climbing wall at ARC? Or maybe check a new performance at Krannert?</li> \
             <li>Here are 101 other suggestions:  \

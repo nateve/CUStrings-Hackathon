@@ -36,12 +36,12 @@ geocode = "40.109309,-88.228389,15mi"
 //query = "stress OR stressed OR stressing OR tired"
 
 router.get('/search/:emotion', function(req, res){
-  var query = req.params.emotion
+  var query = req.params.emotion.toLowerCase();
   client.get('search/tweets', {q: query, geocode: geocode, count: 20},function(error, tweets, response) {
         if(!error) {
             res.status(200).render('search', {
             title: 'CU Strings',
-            emotion: req.params.emotion,
+            emotion: req.params.emotion.toLowerCase(),
             tweets: tweets
             });
         }
