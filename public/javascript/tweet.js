@@ -76,7 +76,7 @@ $(document).ready(function() {
         else if(jQuery.inArray(feeling, sad) !== -1) {
             console.log("feeling sad");
             $("#infograph").attr("src","/images/lonely_2.png");
-            $("#resources").html("<li>You're not alone -- don't be afraid of asking for help. \
+            $("#resources").html("<li>You're not alone - don't be afraid of asking for help. \
             Did you know that more than 1 of every 4 college students think of \
             getting help, but less than half do so?</li>\
             <li>Counseling Center: \
@@ -125,7 +125,7 @@ $(document).ready(function() {
             $("#infograph").attr("src","/images/happy_2.png");
             $("#resources").html("<li>That's great! How about sharing your \
             happiness with others?</li>\
-            <li>Get involved with the Office of Volunteer Programs -- you can \
+            <li>Get involved with the Office of Volunteer Programs - you can \
             search for a group to join by your interest and available time:\
             <a href='http://union.illinois.edu/get-involved/office-of-volunteer-programs'>\
             union.illinois.edu/get-involved</a></li>");
