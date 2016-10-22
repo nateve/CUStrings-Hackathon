@@ -1,19 +1,28 @@
-# Example Express Application
+# CU Strings for UIUC 2016 HackCulture Hackathon
+## Built using Node &  ExpressJS
 
-[![Build Status](https://travis-ci.org/shapeshed/express_example.png?branch=master)](https://travis-ci.org/shapeshed/express_example)
+To run locally:
 
-This is an example [express][4] application to accompany the article [Creating a basic site with node.js and Express][1]. The site is [hosted on Heroku][6].
+Install homebrew
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
-The article covers starting an Express 3.x.x app and deploying it to [Heroku][3]
+Install node & npm
+```brew install node```
 
-There is a [further article][5] detailing how to continuously deploy Node.js applications using GitHub, Travis & Heroku.
+```git clone https://github.com/nateve/hackathon.git hackathon```
 
-![Express Example][2]
+Install dependencies
+```npm install```
+
+Build
+```npm start```
+
+Express will serve the project at http://localhost:3000/
 
 
-[1]: http://shapeshed.com/creating-a-basic-site-with-node-and-express/
-[2]: http://shapeshed.com/images/articles/express_example.jpg
-[3]: http://heroku.com
-[4]: http://expressjs.com/
-[5]: http://shapeshed.com/continuously-deploy-node-apps-with-github-travis-and-heroku/
-[6]: http://express-tutorial.herokuapp.com/
+
+
+This project was built from an an example [express][4] application to accompany the article [Creating a basic site with node.js and Express][1].
+
+
+
