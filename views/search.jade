@@ -15,6 +15,7 @@ block content
                 each status in tweet
                   if status.text
                     li= status.text
+                    li.none= "["+status.created_at+"]"
           else
             li sorry, no tweets!
   section.css-table

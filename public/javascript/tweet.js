@@ -40,7 +40,7 @@ angry = ['annoyed', 'angry', 'antagonized', 'ballistic',
 'wrathful', 'fed up', 'cranky', 'peeved', 'worked up']
 
 happy = ['amused', 'blessed', 'bold', "can't complain",'calm', 'captivated', 'caring', 
-'cheerful', 'chipper', 'chirpy', 'compassionate', 'cool', 'content', 
+'cheerful', 'chill', 'chipper', 'chirpy', 'compassionate', 'cool', 'content', 
 'convivial', 'delighted', 'excited', 'ecstatic', 'elated', 'exultant', 
 'flying high', 'glad', 'good','gleeful', 'gratified', 'jolly', 'joyful', 
 'joyous', 'jubilant', 'laughing', 'loving', 'lively', 'merry', 

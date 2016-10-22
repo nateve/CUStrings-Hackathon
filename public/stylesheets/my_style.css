@@ -57,6 +57,10 @@
     width: 970px;
 }
 
+li.none {
+    list-style-type: none;
+}
+
 /* From Reset Stylesheet
 Based on http://meyerweb.com/eric/thoughts/2008/01/15/resetting-again/
 Removed elements not supported in HTML5
